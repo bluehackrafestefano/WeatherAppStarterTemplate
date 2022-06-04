@@ -5,7 +5,7 @@
 git clone https://github.com/bluehackrafestefano/WeatherAppStarterTemplate.git
 ```
 
-- Use the folder created after clone as the procject main directory, cd to this new directory.
+- Use the folder created after clone as the project main directory, cd to this new directory.
 
 - Create virtual environment as a best practice:
 ```py
