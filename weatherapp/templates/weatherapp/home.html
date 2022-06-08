@@ -19,5 +19,8 @@
     {{ city.temp }} <span>&#8451;</span> <br>
     <img src="http://openweathermap.org/img/wn/{{ city.icon }}.png" alt="Icon"> <br>
     {{ city.desc }} <br>
+    <button>
+       <a href="{% url 'delete' city.city.id %}">Delete</a> 
+    </button>
     <hr>
 {% endfor %}
