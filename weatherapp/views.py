@@ -36,4 +36,8 @@ def home(request):
         }
         city_data.append(data)
         pprint(city_data)
-    return render(request, 'weatherapp/home.html')
+        
+    context = {
+        'city_data': city_data,
+    }
+    return render(request, 'weatherapp/home.html', context)

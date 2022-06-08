@@ -6,8 +6,12 @@
     <input type="submit" value="Add">
 
 </form>
-<!-- 
-{{ city }} <br>
-{{ temp }} <br>
-<img src="http://openweathermap.org/img/wn/{{ icon }}.png" alt="Icon"> <br>
-{{ desc }} <br> -->
+
+
+{% for city in city_data %}
+    {{ city.city }} <br>
+    {{ city.temp }} <br>
+    <img src="http://openweathermap.org/img/wn/{{ city.icon }}.png" alt="Icon"> <br>
+    {{ city.desc }} <br>
+    <hr>
+{% endfor %}
