@@ -22,14 +22,18 @@ def home(request):
         else:
             messages.error(request, 'There is no city!')
     
-    url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric"
-    response = requests.get(url)
-    content = response.json()
-    
-    context = {
-        'city': content['name'],
-        'temp': content['main']['temp'],
-        'icon' : content['weather'][0]['icon'],
-        'desc' : content['weather'][0]['description'],
-    }
-    return render(request, 'weatherapp/home.html', context)
+    city_data = []
+    cities = City.objects.all()
+    for city in cities:
+        url = f"https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric"
+        response = requests.get(url)
+        content = response.json()
+        data = {
+            'city': content['name'],
+            'temp': content['main']['temp'],
+            'icon' : content['weather'][0]['icon'],
+            'desc' : content['weather'][0]['description'],
+        }
+        city_data.append(data)
+        pprint(city_data)
+    return render(request, 'weatherapp/home.html')
