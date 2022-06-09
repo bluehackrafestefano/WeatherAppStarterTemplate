@@ -28,6 +28,19 @@ source env/bin/activate  # for MAC/Linux
 pip install -r requirements.txt
 ```
 
+## Secure your project
+
+### .gitignore
+
+A standard .gitignore file has already added to the project root directory. 
+
+### python-decouple
+
+- Create .env file on root directory. We will collect our variables in this file.
+```py
+SECRET_KEY=o5o9...
+```
+
 - Migrate:
 ```bash
 python3 manage.py migrate  # or;
@@ -40,19 +53,6 @@ py manage.py migrate
 py manage.py createsuperuser  # or;
 python manage.py createsuperuser  # or;
 python3 manage.py createsuperuser
-```
-
-## Secure your project
-
-### .gitignore
-
-A standard .gitignore file has already added to the project root directory. 
-
-### python-decouple
-
-- Create .env file on root directory. We will collect our variables in this file.
-```py
-SECRET_KEY=o5o9...
 ```
 
 - Delete .git folder.
